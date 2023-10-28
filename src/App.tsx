@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { socket } from "./socket";
 import ConnectionStateBanner from "./components/ConnectionStateBanner";
+import "./index.css";
+import ChatList from "./components/chats/ChatList/ChatList";
+import ChatBox from "./components/chats/ChatBox/ChatBox";
 
 function App() {
   const [connected, setConnected] = useState(false);
@@ -16,8 +19,13 @@ function App() {
   }, []);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <ConnectionStateBanner connected={connected} />
+
+      <section className="flex divide-x h-full">
+        <ChatList widthClass="w-72" />
+        <ChatBox widthClass="flex-grow" />
+      </section>
     </main>
   );
 }
