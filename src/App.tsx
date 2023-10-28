@@ -19,11 +19,11 @@ function App() {
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main>
       <ConnectionStateBanner connected={connected} />
 
-      <section className="flex divide-x h-full">
-        <ChatList widthClass="w-72" />
+      <section className="flex divide-x h-[calc(100vh-28px)]">
+        <ChatList widthClass="w-fit" />
         <ChatBox widthClass="flex-grow" />
       </section>
     </main>
