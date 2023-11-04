@@ -1,11 +1,11 @@
+import "../index.css";
 import { useEffect, useState } from "react";
-import { socket } from "./socket";
-import ConnectionStateBanner from "./components/ConnectionStateBanner";
-import "./index.css";
-import ChatList from "./components/chats/ChatList/ChatList";
-import ChatBox from "./components/chats/ChatBox/ChatBox";
+import { socket } from "../socket";
+import ConnectionStateBanner from "../components/ConnectionStateBanner";
+import ChatList from "../components/chats/ChatList/ChatList";
+import ChatBox from "../components/chats/ChatBox/ChatBox";
 
-function App() {
+function Index() {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;
