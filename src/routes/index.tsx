@@ -1,7 +1,6 @@
 import "../index.css";
 import ChatList from "../components/chats/ChatList/ChatList";
 import ChatBox from "../components/chats/ChatBox/ChatBox";
-import Header from "../components/Header";
 import useFetchParticipants from "../hooks/data-fetching/useFetchChatList";
 
 function Index() {
@@ -10,8 +9,7 @@ function Index() {
 
   return (
     <main>
-      <Header />
-      <section className="flex divide-x h-[calc(100vh-48px)]">
+      <section className="flex divide-x h-screen">
         <ChatList widthClass="w-fit" />
         <ChatBox widthClass="flex-grow" />
       </section>

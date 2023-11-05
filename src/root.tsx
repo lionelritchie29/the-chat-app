@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import useAuth from "./hooks/useAuth";
 import LoadingOverlay from "./components/LoadingOverlay";
+import AppSidebar from "./components/Sidebar";
 
 export default function Root() {
   const auth = useAuth();
@@ -9,5 +10,9 @@ export default function Root() {
     return <LoadingOverlay />;
   }
 
-  return <Outlet />;
+  return (
+    <AppSidebar>
+      <Outlet />
+    </AppSidebar>
+  );
 }
