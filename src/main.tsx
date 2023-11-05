@@ -8,7 +8,8 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import Index from "./routes";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Friends from "./routes/friends";
-import NeedAuth from "./components/NeedAuth";
+import NeedAuth from "./components/auth/NeedAuth";
+import NeedGuest from "./components/auth/NeedGuest";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +26,14 @@ const router = createBrowserRouter([
           </NeedAuth>
         ),
       },
-      { path: "auth", element: <Auth /> },
+      {
+        path: "auth",
+        element: (
+          <NeedGuest>
+            <Auth />
+          </NeedGuest>
+        ),
+      },
       {
         path: "friends",
         element: (

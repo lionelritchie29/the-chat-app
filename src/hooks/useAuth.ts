@@ -15,7 +15,8 @@ const useAuth = () => {
   return {
     currentUser: currentUser.value,
     isLoggedOut: currentUser.value === null,
-    userDataNotRetrived: currentUser.value === undefined,
+    userDataNotRetrieved: currentUser.value === undefined,
+    isLoggedIn: currentUser.value !== undefined && currentUser.value !== null,
   };
 };
 

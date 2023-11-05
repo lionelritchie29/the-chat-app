@@ -11,7 +11,7 @@ import useAuth from "@/hooks/useAuth";
 
 export default function AppSidebar({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
-  const { isLoggedOut: isNotLoggedIn } = useAuth();
+  const { isLoggedOut } = useAuth();
 
   const navItems = [
     {
@@ -31,7 +31,7 @@ export default function AppSidebar({ children }: { children: ReactNode }) {
     navigate("/auth");
   };
 
-  if (isNotLoggedIn === null) {
+  if (isLoggedOut) {
     return children;
   }
 
