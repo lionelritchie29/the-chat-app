@@ -1,16 +1,16 @@
 import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
-import { signal } from "@preact/signals-react";
+import { useSignal } from "@preact/signals-react";
 import { useEffect } from "react";
 
-const currentUser = signal<User | null | undefined>(undefined);
-
 const useAuth = () => {
+  const currentUser = useSignal<User | null | undefined>(undefined);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       currentUser.value = user;
     });
-  }, []);
+  }, [currentUser]);
 
   return currentUser.value;
 };

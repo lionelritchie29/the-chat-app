@@ -7,11 +7,12 @@ interface IProps {
     title: string;
     icon: JSX.Element;
   }[];
+  className: string;
 }
 
-export function SidebarNav({ items }: IProps) {
+export function SidebarNav({ items, className }: IProps) {
   return (
-    <nav className="flex flex-col space-y-2 mx-5 mt-2">
+    <nav className={cn("flex flex-col space-y-2 mx-5 mt-2", className)}>
       {items.map((item) => (
         <NavLink
           className={({ isActive }) =>
