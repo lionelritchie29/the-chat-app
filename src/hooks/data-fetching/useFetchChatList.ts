@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { QueryKey } from "../../constants/queries";
+import { QueryKey } from "../../lib/constants/queries";
 import { UserService } from "../../services/user-service";
 
 const useFetchParticipants = () => {

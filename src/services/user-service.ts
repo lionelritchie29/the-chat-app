@@ -1,5 +1,5 @@
 import axios from "axios";
-import { generateAPIUrl } from "../constants/api";
+import { generateAPIUrl } from "../lib/constants/api";
 
 export class UserService {
   static getUsers = async () => {
