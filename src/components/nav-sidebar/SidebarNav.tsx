@@ -16,8 +16,8 @@ export function SidebarNav({ items }: IProps) {
         <NavLink
           className={({ isActive }) =>
             cn(
-              "py-2 font-medium hover:text-blue-600 flex items-center space-x-2",
-              isActive && "text-blue-600 font-semibold"
+              "py-2 font-semibold hover:text-blue-600 flex items-center space-x-2",
+              isActive && "text-blue-600"
             )
           }
           key={item.href}
