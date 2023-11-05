@@ -3,15 +3,15 @@ import { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NeedAuth({ children }: { children: ReactNode }) {
-  const user = useAuth();
+  const { isLoggedOut: isNotLoggedIn } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user === null) {
+    if (isNotLoggedIn) {
       navigate("/auth");
       return;
     }
-  }, [navigate, user]);
+  }, [navigate, isNotLoggedIn]);
 
   return children;
 }

@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export default function SidebarHeader({ className }: IProps) {
-  const user = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div className={cn("flex items-center space-x-3 p-4", className)}>
@@ -16,7 +16,7 @@ export default function SidebarHeader({ className }: IProps) {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 
-      <div className="font-semibold">{user?.displayName}</div>
+      <div className="font-semibold">{currentUser?.displayName}</div>
     </div>
   );
 }

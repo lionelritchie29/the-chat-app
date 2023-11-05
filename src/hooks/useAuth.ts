@@ -12,7 +12,11 @@ const useAuth = () => {
     });
   }, [currentUser]);
 
-  return currentUser.value;
+  return {
+    currentUser: currentUser.value,
+    isLoggedOut: currentUser.value === null,
+    userDataNotRetrived: currentUser.value === undefined,
+  };
 };
 
 export default useAuth;
